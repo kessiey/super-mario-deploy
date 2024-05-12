@@ -179,12 +179,16 @@ Here's Step 3 formatted and labeled for your README:
 
     Paste the ingress link in a browser to play the Mario game.
 ---
-    ab9166491db6b4c5498bedcb871e5db8-1140714953.us-east-2.elb.amazonaws.com
+    http://ada8adc8b087d41558a5495ade0a1ebf-525270150.us-east-2.elb.amazonaws.com/
+
+    
+![Screenshot 2024-05-12 194754](https://github.com/kessiey/super-mario-k8s-deploy/assets/122237149/99d02307-5e25-408d-8169-a43db9171d4c)
+
 
 ---
 
 
-Follow these steps to provision the cluster and deploy the Mario game. 
+Follow these steps to provision the cluster and deploy the SUPER MARIO GAME. 
 ---
 Enjoy the trip back to 1985! 🎮🍄
 
