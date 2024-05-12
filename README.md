@@ -177,10 +177,10 @@ Here's Step 3 formatted and labeled for your README:
     kubectl describe service mario-service
     ```
 
-    Paste the ingress link in a browser to play the Mario game.
----
+12. **Copy and Paste the ingress link in a browser to play the Mario game**:
+    ```
     http://ada8adc8b087d41558a5495ade0a1ebf-525270150.us-east-2.elb.amazonaws.com/
-
+    ```
     
 ![Screenshot 2024-05-12 194754](https://github.com/kessiey/super-mario-k8s-deploy/assets/122237149/99d02307-5e25-408d-8169-a43db9171d4c)
 
