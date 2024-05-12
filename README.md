@@ -1,5 +1,4 @@
-# super-mario-deploy
-Sure, here's the text reformatted and relabeled for a README on GitHub:
+# SUPER-MARIO-DEPLOY
 
 ---
 
@@ -47,4 +46,145 @@ Ensure you have necessary permissions and follow best practices while configurin
 
 ---
 
-Feel free to adjust the formatting or wording as needed for your README on GitHub!
+
+Follow these steps to create an IAM role and connect the EC2 instance:
+
+---
+
+# Step 2: Create IAM Role
+
+1. **Search for IAM**:
+   - In the AWS Management Console, search for "IAM" in the search bar and click on "Roles".
+
+2. **Create Role**:
+   - Click on "Create Role".
+
+3. **Select Entity Type**:
+   - Choose "AWS service" as the entity type.
+
+4. **Choose a use case**:
+   - Select "EC2" and click "Next".
+
+5. **Set Permissions**:
+   - For permission policy, select "Administrator Access" (for learning purposes only). Click "Next".
+
+6. **Name the Role**:
+   - Provide a name for the role and click "Create role".
+
+7. **Attach Role to EC2 Instance**:
+   - Go to the EC2 Dashboard and select the instance.
+
+8. **Modify IAM Role**:
+   - Click on "Actions" -> "Security" -> "Modify IAM role".
+
+9. **Select Role**:
+   - Choose the role that was created earlier and click "Update IAM role".
+
+10. **Connect to the Instance**:
+    - Connect the instance to VS Code, Mobaxtreme or Putty for accessing it.
+
+---
+
+Here's Step 3 formatted and labeled for your README:
+
+---
+
+# Step 3: Cluster Provision
+
+1. **Clone Repository**:
+   ```
+   git clone https://github.com/kessiey/super-mario-deploy.git
+   ```
+
+2. **Change Directory**:
+   ```bash
+   cd k8s-mario
+   ```
+
+3. **Provide Executable Permission and Run Script**:
+   ```bash
+   sudo chmod +x script.sh
+   ./script.sh
+   ```
+
+   This script installs Terraform, AWS CLI, kubectl, and Docker. Check versions:
+   ```
+   docker --version
+   aws --version
+   kubectl version --client
+   terraform --version
+   ```
+
+4. **Change Directory to EKS-TF**:
+   ```
+   cd EKS-TF
+   ```
+
+5. **Initialize Terraform**:
+   ```
+   terraform init
+   ```
+
+   **Note**: Don’t forget to change the S3 bucket name in the `backend.tf` file.
+
+6. **Validate and Plan Terraform**:
+   ```
+   terraform validate
+   terraform plan
+   ```
+
+7. **Provision Cluster**:
+   ```
+   terraform apply --auto-approve
+   ```
+
+   Completed in 10 minutes.
+
+8. **Update Kubernetes Configuration**:
+   - Make sure to change your desired region.
+   ```
+   aws eks update-kubeconfig --name EKS_CLOUD --region us-east-2
+   ```
+
+9. **Change Directory Back to k8s-mario**:
+   ```
+   cd ..
+   ```
+
+10. **Apply Deployment and Service**:
+    **Deployment**:
+    ```
+    kubectl apply -f deployment.yaml
+    ```
+
+    Check the deployment:
+    ```
+    kubectl get all
+    ```
+
+    **Service**:
+    ```
+    kubectl apply -f service.yaml
+    ```
+
+    Check the service:
+    ```
+    kubectl get all
+    ```
+
+11. **Describe Service and Copy LoadBalancer Ingress**:
+    ```
+    kubectl describe service mario-service
+    ```
+
+    Paste the ingress link in a browser to play the Mario game.
+---
+    ab9166491db6b4c5498bedcb871e5db8-1140714953.us-east-2.elb.amazonaws.com
+
+---
+
+
+Follow these steps to provision the cluster and deploy the Mario game. 
+---
+Enjoy the trip back to 1985! 🎮🍄
+
